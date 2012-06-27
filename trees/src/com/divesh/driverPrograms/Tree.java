@@ -7,13 +7,13 @@ import com.divesh.util.TreeFormation;
 
 public class Tree {
 	public static void main(String args[]) {
-		TreeTraversal traversal = new TreeTraversal();
+		
 		System.out.println("preorder Traversal");
-		traversal.preOrderTraversal(TreeFormation.getBinaryTree());
+		TreeTraversal.preOrderTraversal(TreeFormation.getBinaryTree());
 		System.out.println("\n InOrder Traversal");
-		traversal.inOrderTraversal(TreeFormation.getBinaryTree());
+		TreeTraversal.inOrderTraversal(TreeFormation.getBinaryTree());
 		System.out.println("\npostOrder Traversal");
-		traversal.postOrderTraversal(TreeFormation.getBinaryTree());
+		TreeTraversal.postOrderTraversal(TreeFormation.getBinaryTree());
 		System.out.println("\nTreeSize==>"
 				+ TreeSize.getTreeSize(TreeFormation.getBinaryTree()));
 		System.out.println("sameTree==>"
@@ -23,5 +23,8 @@ public class Tree {
 				+ TreeSize.getTreeHeight(TreeFormation.getBinaryTree()));
 		System.out.println("hightOfTree2==>"
 				+ TreeSize.getTreeHeight(TreeFormation.getBinaryTree2()));
+
+		System.out.println("levelOrder Traversal");
+		TreeTraversal.levelOrderTraversal(TreeFormation.getBinarySerchTree());
 	}
 }
