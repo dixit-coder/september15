@@ -25,6 +25,9 @@ public class Tree {
 				+ TreeSize.getTreeHeight(TreeFormation.getBinaryTree2()));
 
 		System.out.println("levelOrder Traversal");
-		TreeTraversal.levelOrderTraversal(TreeFormation.getBinarySerchTree());
+		TreeTraversal.levelOrderTraversal(TreeFormation.getBinaryTree2());
+		
+		System.out.println("\nlevelOrder2 Traversal");
+		TreeTraversal.levelOrderTraversal2(TreeFormation.getBinarySerchTree());
 	}
 }

@@ -24,7 +24,10 @@ public class TreeFormation {
 		root.rchild = new Node(3);
 		root.rchild.lchild = new Node(4);
 		root.rchild.rchild = new Node(5);
-
+      /*    1
+       *  2   3
+       *     4  5
+       *  */
 		return root;
 	}
 
