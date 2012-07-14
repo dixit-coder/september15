@@ -2,7 +2,7 @@ package com.divesh.core;
 
 public class MinDistanceBwTwoNumbers {
 	public int getMinDis(int a[], int x, int y) {
-		int minDist = -1000, holdposition = -10000, holdvariable = -1000, serchvariable = -1000;
+		int minDist = 10000, holdposition = -10000, holdvariable = -1000, serchvariable = -1000;
 		boolean flage = true;
 		for (int k = 0; k < a.length; k++) {
 			if (flage) {
@@ -15,7 +15,8 @@ public class MinDistanceBwTwoNumbers {
 				}
 			}
 			if (a[k] == serchvariable) {
-				minDist = k - holdposition;
+				if (minDist > (k - holdposition))
+					minDist = k - holdposition;
 				flage = true;
 			}
 			if (a[k] == holdvariable) {
@@ -30,6 +31,6 @@ public class MinDistanceBwTwoNumbers {
 		//int arr[]={1, 2};
 		//int arr[]={3, 5, 4, 2, 6, 5, 6, 6, 5, 4, 8, 3};
 		int arr[]={2, 5, 3, 5, 4, 4, 2, 3};
-		System.out.println(distanceBwTwoNumbers.getMinDis(arr, 2, 3));
+		System.out.println(distanceBwTwoNumbers.getMinDis(arr, 2, 5));
 	}
 }

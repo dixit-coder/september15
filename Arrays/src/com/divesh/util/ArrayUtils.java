@@ -41,4 +41,31 @@ public class ArrayUtils {
 			System.out.print(" " + x);
 		}
 	}
+    // get the Maximum element of the array.
+	public static int getMaxElement(int a[]) {
+		int max = Integer.MIN_VALUE;
+		for (int num : a) {
+			if (num > max)
+				max = num;
+		}
+		return max;
+	}
+	// get the Minimum element of the array.
+		public static int getMinElement(int a[]) {
+			int min = Integer.MAX_VALUE;
+			for (int num : a) {
+				if (num < min)
+					min = num;
+			}
+			return min;
+		}
+   // get the sum of the array
+	public static int getSum(int a[]) {
+		int sum = 0;
+		for (int x : a) {
+			sum += x;
+		}
+		return sum;
+	}
+	
 }
