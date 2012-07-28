@@ -12,7 +12,7 @@ import com.divesh.util.BitsUtil;
  */
 public class NextNumberSameNumberOfsetBits {
 	public int nextHigherNumber(int n) {
-		// BitsUtil.printBits("", n);
+	    BitsUtil.printBits("", n);
 		int count = 0, right = 0;
 		while (n > 0 && !((n & 1) == 1 && (((n >> 1) & 1) == 0))) {
 			if ((n & 1) == 1)
