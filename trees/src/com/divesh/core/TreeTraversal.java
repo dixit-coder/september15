@@ -3,8 +3,10 @@ package com.divesh.core;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import com.divesh.util.Tnode;
+
 public class TreeTraversal {
-	public static void inOrderTraversal(Node node) {
+	public static void inOrderTraversal(Tnode node) {
 		if (node == null)
 			return;
 		inOrderTraversal(node.lchild);
@@ -12,7 +14,7 @@ public class TreeTraversal {
 		inOrderTraversal(node.rchild);
 	}
 
-	public static void preOrderTraversal(Node node) {
+	public static void preOrderTraversal(Tnode node) {
 		if (node == null)
 			return;
 		System.out.print(" " + node.data);
@@ -20,7 +22,7 @@ public class TreeTraversal {
 		preOrderTraversal(node.rchild);
 	}
 
-	public static void postOrderTraversal(Node node) {
+	public static void postOrderTraversal(Tnode node) {
 		if (node == null)
 			return;
 		postOrderTraversal(node.lchild);
@@ -28,9 +30,9 @@ public class TreeTraversal {
 		System.out.print(" " + node.data);
 	}
 
-	public static void levelOrderTraversal(Node node) {
-		Queue<Node> queue = new LinkedList<Node>();
-		Node temp_node = node;
+	public static void levelOrderTraversal(Tnode node) {
+		Queue<Tnode> queue = new LinkedList<Tnode>();
+		Tnode temp_node = node;
 		queue.add(temp_node);
 		/*while (temp_node != null) {
 			System.out.print(" " + temp_node.data);
@@ -52,14 +54,14 @@ public class TreeTraversal {
 
 	}
 
-	public static void levelOrderTraversal2(Node node) {
+	public static void levelOrderTraversal2(Tnode node) {
 		int height = TreeSize.getTreeHeight(node);
 		for (int i = 1; i <= height; i++) {
           printLevel(node, i);
 		}
 	}
 
-	private static void printLevel(Node node, int k) {
+	private static void printLevel(Tnode node, int k) {
 		if (node == null)
 			return;
 		if (k == 1)

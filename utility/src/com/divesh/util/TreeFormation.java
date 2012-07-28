@@ -3,48 +3,44 @@ package com.divesh.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.divesh.core.Node;
-import com.divesh.core.TreeTraversal;
-
 /** important revision quetion */
 public class TreeFormation {
-	public static Node getBinaryTree() {
-		Node root = new Node(1);
-		root.lchild = new Node(2);
-		root.rchild = new Node(3);
-		root.lchild.lchild = new Node(4);
-		root.lchild.rchild = new Node(5);
+	public static Tnode getBinaryTree() {
+		Tnode root = new Tnode(1);
+		root.lchild = new Tnode(2);
+		root.rchild = new Tnode(3);
+		root.lchild.lchild = new Tnode(4);
+		root.lchild.rchild = new Tnode(5);
 
 		return root;
 	}
 
-	public static Node getBinaryTree2() {
-		Node root = new Node(1);
-		root.lchild = new Node(2);
-		root.rchild = new Node(3);
-		root.rchild.lchild = new Node(4);
-		root.rchild.rchild = new Node(5);
-      /*    1
-       *  2   3
-       *     4  5
-       *  */
+	public static Tnode getBinaryTree2() {
+		Tnode root = new Tnode(1);
+		root.lchild = new Tnode(2);
+		root.rchild = new Tnode(3);
+		root.rchild.lchild = new Tnode(4);
+		root.rchild.rchild = new Tnode(5);
+		/*
+		 * 1 2 3 4 5
+		 */
 		return root;
 	}
 
-	public static Node getBinaryTree3() {
-		Node root = new Node(1);
-		root.lchild = new Node(2);
-		root.rchild = new Node(3);
-		root.lchild.lchild = new Node(4);
-		root.lchild.rchild = new Node(5);
-		root.rchild.lchild = new Node(6);
-		root.rchild.rchild = new Node(7);
+	public static Tnode getBinaryTree3() {
+		Tnode root = new Tnode(1);
+		root.lchild = new Tnode(2);
+		root.rchild = new Tnode(3);
+		root.lchild.lchild = new Tnode(4);
+		root.lchild.rchild = new Tnode(5);
+		root.rchild.lchild = new Tnode(6);
+		root.rchild.rchild = new Tnode(7);
 
 		return root;
 	}
 
-	public Node getBinarySerchTree(List<Integer> list) {
-		Node root = null;
+	public Tnode getBinarySerchTree(List<Integer> list) {
+		Tnode root = null;
 		for (int num : list) {
 			root = insertInBinaryTree(root, num);
 		}
@@ -57,12 +53,12 @@ public class TreeFormation {
 	 * which the caller should then use (the standard trick to avoid using
 	 * reference parameters).
 	 */
-	private Node insertInBinaryTree(Node node, int value) {
+	private Tnode insertInBinaryTree(Tnode node, int value) {
 		/*
 		 * 1. If the tree is empty, return a new, single node
 		 */
 		if (node == null) {
-			node = new Node(value);
+			node = new Tnode(value);
 			return node;
 		} else {
 			/* 2. Otherwise, recur down the tree */
@@ -75,13 +71,12 @@ public class TreeFormation {
 			return node;
 		}
 	}
-    public static Node getBinarySerchTree()
-    {
-    	/**     4
-    	 *   2    6
-    	 * 1  3  5  9
-    	 * */
-    	TreeFormation formation = new TreeFormation();
+
+	public static Tnode getBinarySerchTree() {
+		/**
+		 * 4 2 6 1 3 5 9
+		 * */
+		TreeFormation formation = new TreeFormation();
 		List<Integer> list = new ArrayList<Integer>();
 		list.add(4);
 		list.add(2);
@@ -90,10 +85,11 @@ public class TreeFormation {
 		list.add(3);
 		list.add(5);
 		list.add(9);
-    	
-    	return formation.getBinarySerchTree(list);
-    	
-    }
+
+		return formation.getBinarySerchTree(list);
+
+	}
+
 	public static void main(String args[]) {
 		TreeFormation formation = new TreeFormation();
 		List<Integer> list = new ArrayList<Integer>();
@@ -104,7 +100,7 @@ public class TreeFormation {
 		list.add(3);
 		list.add(5);
 		list.add(9);
-		TreeTraversal.preOrderTraversal(formation.getBinarySerchTree(list));
+		//TreeTraversal.preOrderTraversal(formation.getBinarySerchTree(list));
 	}
 
 }

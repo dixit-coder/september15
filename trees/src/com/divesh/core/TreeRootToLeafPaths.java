@@ -2,11 +2,12 @@ package com.divesh.core;
 
 import java.util.Stack;
 
+import com.divesh.util.Tnode;
 import com.divesh.util.TreeFormation;
 
 public class TreeRootToLeafPaths {
 private static Stack<Integer> stack = new Stack<Integer>();
-public void printAllpath(Node node)
+public void printAllpath(Tnode node)
 { 
 	if(node == null)
 	{

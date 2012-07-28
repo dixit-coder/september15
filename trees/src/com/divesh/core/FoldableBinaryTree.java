@@ -1,9 +1,11 @@
 package com.divesh.core;
 
-public class FoldableBinaryTree {
-	private static Node temp = null;
+import com.divesh.util.Tnode;
 
-	public static boolean isFoldable(Node node) {
+public class FoldableBinaryTree {
+	private static Tnode temp = null;
+
+	public static boolean isFoldable(Tnode node) {
 		if (node == null)
 			return true;
 		Mirror(node.lchild);
@@ -13,7 +15,7 @@ public class FoldableBinaryTree {
 		return b;
 	}
 
-	public static boolean isStructureSame(Node n1, Node n2) {
+	public static boolean isStructureSame(Tnode n1, Tnode n2) {
 		if (n1 == null && n2 == null)
 			return true;
 		if ((n1 == null && n2 != null) || (n1 != null && n2 == null)) {
@@ -23,7 +25,7 @@ public class FoldableBinaryTree {
 				&& isStructureSame(n1.rchild, n2.rchild);
 	}
 
-	public static void Mirror(Node node) {
+	public static void Mirror(Tnode node) {
 		if (node == null)
 			return;
 		Mirror(node.lchild);
@@ -41,12 +43,12 @@ public class FoldableBinaryTree {
 	}
 
 	// Utility functions to draw the tree which is foldable
-	public static Node getBinaryTree() {
-		Node root = new Node(1);
-		root.lchild = new Node(2);
-		root.rchild = new Node(3);
-		root.rchild.rchild = new Node(4);
-		root.lchild.rchild = new Node(5);
+	public static Tnode getBinaryTree() {
+		Tnode root = new Tnode(1);
+		root.lchild = new Tnode(2);
+		root.rchild = new Tnode(3);
+		root.rchild.rchild = new Tnode(4);
+		root.lchild.rchild = new Tnode(5);
 		/*
 		 * 1 2 3 5 4
 		 */

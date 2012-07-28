@@ -3,11 +3,15 @@ package main.java;
 public class Redwood extends Tree {
 }
 class Tree extends Plant {	
+	public Tree()
+	{
+		super(null);
+	}
 }
 
 class Plant
 {   public String name;
-  public Plant()
+  private Plant()
   {
 	  name = null;
   }

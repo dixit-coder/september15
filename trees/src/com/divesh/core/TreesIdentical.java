@@ -1,7 +1,9 @@
 package com.divesh.core;
 
+import com.divesh.util.Tnode;
+
 public class TreesIdentical {
-	public static boolean sameTree(Node node1, Node node2) {
+	public static boolean sameTree(Tnode node1, Tnode node2) {
 		if (node1 == null && node2 == null)
 			return true;
 		else if (node1 != null && node2 != null) {

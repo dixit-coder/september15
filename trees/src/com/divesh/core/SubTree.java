@@ -1,8 +1,10 @@
 package com.divesh.core;
 
+import com.divesh.util.Tnode;
+
 public class SubTree {
 
-	public boolean isSubTree(Node T, Node S) {
+	public boolean isSubTree(Tnode T, Tnode S) {
 		if (S == null)
 			return true;
 		if (T == null)
@@ -12,7 +14,7 @@ public class SubTree {
 		return (isSubTree(T.lchild, S) || isSubTree(T.rchild, S));
 	}
 
-	public boolean areEquivalent(Node t, Node s) {
+	public boolean areEquivalent(Tnode t, Tnode s) {
 		if (t == null && s == null)
 			return true;
 		if (t == null || s == null)
@@ -23,18 +25,18 @@ public class SubTree {
 
 	public static void main(String args[])
 	{
-		Node T = new Node(26);
-		T.lchild = new Node(10);
-		T.rchild = new Node(13);
-		T.rchild.rchild = new Node(3);
-		T.lchild.lchild = new Node(4);
-		T.lchild.rchild = new Node(6);
-		T.lchild.lchild.rchild= new Node(30);
+		Tnode T = new Tnode(26);
+		T.lchild = new Tnode(10);
+		T.rchild = new Tnode(13);
+		T.rchild.rchild = new Tnode(3);
+		T.lchild.lchild = new Tnode(4);
+		T.lchild.rchild = new Tnode(6);
+		T.lchild.lchild.rchild= new Tnode(30);
       
-		Node S  = new Node(10);
-	    S.rchild= new Node(6);
-	    S.lchild= new Node(4);
-	    S.lchild.rchild= new Node(30);
+		Tnode S  = new Tnode(10);
+	    S.rchild= new Tnode(6);
+	    S.lchild= new Tnode(4);
+	    S.lchild.rchild= new Tnode(30);
 		
 		SubTree subTree = new SubTree();
 		System.out.println(subTree.isSubTree(T, S));

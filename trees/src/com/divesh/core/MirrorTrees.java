@@ -1,20 +1,21 @@
 package com.divesh.core;
 
+import com.divesh.util.Tnode;
 import com.divesh.util.TreeFormation;
 
 public class MirrorTrees {
-	private static Node temp = null;
-	private static Node root = null;
-	public void setroot(Node node)
+	private static Tnode temp = null;
+	private static Tnode root = null;
+	public void setroot(Tnode node)
 	{
 		this.root= node;
 	}
-	public Node getroot()
+	public Tnode getroot()
 	{
 		return this.root;
 	}
 
-	public static void getMirrorImage(Node root) {
+	public static void getMirrorImage(Tnode root) {
 		if (root == null)
 			return;
 		else {

@@ -2,6 +2,7 @@ package com.divesh.core;
 
 import java.util.Stack;
 
+import com.divesh.util.Tnode;
 import com.divesh.util.TreeFormation;
 
 public class MaxSumLeafToRootPath {
@@ -9,10 +10,10 @@ public class MaxSumLeafToRootPath {
 		return maxSum;
 	}
 
-	private Stack<Node> stack = new Stack<Node>();
+	private Stack<Tnode> stack = new Stack<Tnode>();
 	private int maxSum = -1000000, sum;
 
-	public void preOrderTraversal(Node node) {
+	public void preOrderTraversal(Tnode node) {
 		// do the inorder traversal and put all the non-leaf node in an stack
 
 		if (node == null)

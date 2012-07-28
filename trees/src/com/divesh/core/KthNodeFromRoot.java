@@ -1,9 +1,10 @@
 package com.divesh.core;
 
+import com.divesh.util.Tnode;
 import com.divesh.util.TreeFormation;
 
 public class KthNodeFromRoot {
-	public void getKthNode(Node node, int k) {
+	public void getKthNode(Tnode node, int k) {
 		if(node == null)
 			return;
 		if ( k == 0 ) {

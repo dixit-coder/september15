@@ -2,12 +2,13 @@ package com.divesh.core;
 
 import java.util.Stack;
 
+import com.divesh.util.Tnode;
 import com.divesh.util.TreeFormation;
 
 public class KthSmallestInBST {
 	private int leftSize;
 
-	public Node getKthSmallestElm(Node node, int k) {
+	public Tnode getKthSmallestElm(Tnode node, int k) {
 		if (node == null) {
 			return null;
 		}
@@ -27,7 +28,7 @@ public class KthSmallestInBST {
 
 	public static void main(String args[]) {
 		KthSmallestInBST kthSmallestInBST = new KthSmallestInBST();
-		Node node = kthSmallestInBST.getKthSmallestElm(
+		Tnode node = kthSmallestInBST.getKthSmallestElm(
 				TreeFormation.getBinarySerchTree(), 5);
 		System.out.println(node.data);
 	}

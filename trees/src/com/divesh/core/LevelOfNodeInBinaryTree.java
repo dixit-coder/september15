@@ -2,13 +2,14 @@ package com.divesh.core;
 
 import java.util.Stack;
 
+import com.divesh.util.Tnode;
 import com.divesh.util.TreeFormation;
 
 public class LevelOfNodeInBinaryTree {
 	private Stack<Integer> stack = new Stack<Integer>();
 	private int level = 0;
     /** implementations using stack*/
-	public void getLevelOfnode(Node node, int k) {
+	public void getLevelOfnode(Tnode node, int k) {
 		if (node == null) {
 			return;
 		}
@@ -22,7 +23,7 @@ public class LevelOfNodeInBinaryTree {
 		stack.pop();
 	}
 
-	public int getLevelOfnode2(Node node, int k, int level) {
+	public int getLevelOfnode2(Tnode node, int k, int level) {
 		if (node == null) {
 			return 0;
 		}
