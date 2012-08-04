@@ -1,0 +1,25 @@
+// finding median in O(n)
+  int  _quickSelect(int a[],int low,int high, int median)
+          left = low;
+	  right = high-1;
+          pivote = high;
+	  while(left<right)
+              while(a[left] < a[pivote])
+                     left++;
+              while(a[right] > a[pivote])
+                     right--;
+	      if(left<right)
+                  swap(a,left,right)
+                  left++;
+                  right--;
+           
+
+          swap(a,left,pivote)
+          if(pivote==median)
+          return pivote;
+          else
+             if(pivote>median)
+	        return _quickSelect(a,low,pivote-1,median);
+             else 
+                median = median - pivote;
+                return _quickSelect(a,pivote+1,high,median) 

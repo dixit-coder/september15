@@ -1,0 +1,6 @@
+int _getDuplicateCount(TNode node,int count)
+     if(node == null)
+     return count;
+     count+=_getCountInRightSubTree(node);
+     return (_getDuplicateCount(node.left,count) + _getDuplicateCount(node.right,count));
+     
