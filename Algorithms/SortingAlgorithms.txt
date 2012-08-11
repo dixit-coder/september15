@@ -1,0 +1,106 @@
+// bubble sort...  highest element goes in end in the first pass
+  _bubbleSort(int arr[])
+    for(int i=0;i<arr.length;i++)
+        for(int j=1;j<arr.lenth;j++)
+             if(arr[j-1]>arr[j])
+                  swap(arr[j-1],arr[j])
+
+// Selection sort Lowest element will go in the correct place in the first pass
+
+  _selectionSort(int arr[])
+    for(int i=0;i<arr.lenght;i++)
+       for(int j=i+1;j<arr.lenght;j++)
+	   if(arr[i]>arr[j])
+                 swap(arr[i],arr[j])
+
+// Insertion sort
+  
+ _insertionSort(int arr[])
+   for(int i =0;i<arr.length;i++)
+        key=arr[i];
+        for(int j = i-1; (j>=0) && arr[j] > key;j--)
+             arr[j+1]=a[j];
+        arr[j+1]=key;
+
+// quickSort
+     _quickSort(int a[],int low,int high)
+        if(low > high)
+          return;
+        right = high-1; 
+        left = low;
+        pivote = high;
+        while(left < right)
+             while(a[left] < a[pivote])
+                left++;
+             while(a[right] > a[pivote])
+                right--;
+             if(left < right)
+                swap(a, left ,right)
+                left++;right--;
+        if(low<right)
+        _quickSort(a,low,right);
+        if(left<high)
+        _quickSort(a,left,high);
+       
+  
+// mergeSort
+
+   _mergeSort(int a[],int low, int high)
+        if(low>=high)
+          return
+        mid = low + (high - low) /2;
+        if(mid ==low)
+           adjust(a,low,high);
+        _mergesort(a,low,mid);
+        _mergeSort(a,mid+1,high);
+        _merge(a,low,mid,high);
+
+   _mergeSort(int a[],int low,int mid,int high)
+         int c[] = new int[high-low+1];
+         // Copy both parts into the helper array
+          for(int i = low; i<=high; i++)
+               c[i] = a[i];
+         left = low;
+         right = mid+1;
+         count =low; 
+         while(left<=mid && right <=high)
+               if(c[left] < c[right])
+                  a[count]=c[left++];
+               else
+                  a[count]=c[right++];
+               count++;
+         while(left<=mid)
+              a[count]=c[left++];
+              count++;
+         while(right <=high)
+              a[count]=c[right++];
+              count++;
+         
+
+// HeapSort
+     _heapSort(int A[])
+        _bu‎ildMaxHeap(A)
+        for(int i= A.length ;i>1;i--)  // for (i = A.lenght down to 2) 
+           swap(A[i],A[1])
+           A.length = A.length - 1;
+           _maxHeapify(A,1)
+     
+      _maxHeapify(A,i)  // i=parent
+        left = 2*i+1;
+	right = 2*i+2;
+        max = i;
+        if(left<=A.length && A[left] > A[max])
+             max = left;
+        if(right<=A.length && A[right] > A[max])
+             max = right;
+        if(max!=i)
+           swap(A,max,i)
+           _maxHeapify(A,max);      
+
+     _bu‎ildMaxHeap(int A[])
+       for(int i=(A.length-2)/2; i>=0;i--)
+           _maxHeapify(A,i)
+
+
+
+

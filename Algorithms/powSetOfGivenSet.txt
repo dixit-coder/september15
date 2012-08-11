@@ -1,0 +1,39 @@
+// find all the subset of the given set. 
+// input:  {1,2,3,4,5,6}
+// output: {{},{1},{2},{3},{4},{5},{6},{1,2},{1,3},{1,4},{1,5},.................}
+  List<List<Integer>> getPowerSet(List<Integer> inputSet)
+   { 
+       List<List<Integer>> ps = new ArrayList<List<Integer>>();  // powerSet list
+       ps.add(new ArrayList<Integer>); // adding the null set
+       for(int X: inputSet)
+       {    List<List<Integer>> new_ps = new ArrayList<List<Integer>>();
+            for(List list: ps)
+              {   new_ps.add(list)
+                  tmpSet = convert "list" in set;
+                  tmpSet.add(X);
+                  List newList = new ArrayList<Inteter>(tmpSet);
+                  new_ps.add(newList);             
+              }
+            ps = new_ps;
+       }
+      return ps;
+      
+       
+   }
+
+
+----------------------------------
+ List<List<Inetger>> ps = new ArrayList<List<Integer>>();
+      ps.add(new ArrayList<Integer>());
+for (int n : numbers) {
+          List<List<Integer>> new_ps = new ArrayList<List<Integer>>();
+          for (List<Integer> subset : ps) {
+              new_ps.add(subset);
+              List<Integer> temp = new ArrayList<Integer>(subset);
+              temp.add(n);
+              new_ps.add(temp);
+          }
+          ps = new_ps;
+      }
+      return ps;
+   }
