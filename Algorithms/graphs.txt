@@ -1,0 +1,8 @@
+class Vertex
+{ public char label;
+  public boolean wasVisited;
+  public vertex(char lab)
+  { label = lab;
+     wasVisited = false;
+  }
+}

@@ -1,0 +1,207 @@
+// median of two sorted array of same length
+
+ int _getMedian(int arr1[],int low1,int high1,int arr2[],int low2,int high2)
+       if(low1+1==high1 && low2+1==high2)
+          return (Max(arr1[low1],arr2[low2])+ Min(arr1[high1]+arr2[high2]))/2;
+  
+       median1 = _getMedian(arr1,low,high)
+       median2 = _getMedian(arr2,low,high)
+       if(median1==median2)
+            return (median1+median2)/2;
+       if(median1<median2)
+         return _getMedian(arr1[],median1,high1,arr2[],low2,median2);
+       else
+         return _getMedian(arr1[],low1,median1,arr2[],median2,high2);
+
+       return -1;
+
+
+// reverse an array  
+  void _reverse(int arr[], int low, high)
+        if(low>=high)
+          return
+        else
+         tmp = arr[low];
+         arr[low]=arr[high];
+         arr[high]=tmp;
+	 _reverse(arr,++low, --high)
+
+// function rotate(arr[], d, n) that rotates arr[] of size n by d elements.
+
+   _rotate(arr[], int d, int n)
+       _reverse(arr,0, d-1)
+       _reverse(arr,d, n)
+       _reverse(arr,0, n)
+
+
+// rotate array elements by one in righ
+void _leftRotatebyOne(int arr[], int n)
+       tmp=arr[0];
+       for(int i=0;i<n-1;i++)
+         arr[i]=arr[i+1];
+       arr[i]=tmp;
+
+
+// Move m elements of mPlusN[] to end.
+int _moveToEnd(int mPlusN[], int size)
+        j=size-1;
+       	for(int i =size-1;i>=0;i--)
+         if(mPlusN[i]!=NA)
+              mPlusN[j]=mPlusN[i];
+              j--;
+        // return starting element of compact array
+         return j;
+
+// Leader in the array
+
+void _printLeaders(int arr[])
+       prevLeader = arr[arr.length-1];
+       for(int i= n-2;i>=0;i--)
+         if(arr[i] > prevLeader)
+             _print prevLeader
+             prevLeader = arr[i];
+         _print prevLeader
+
+/*Function to return max sum such that no two elements
+ are adjacent */
+  // O(n^2) solution
+int _findMaxSum(int arr[], int size)
+    tmp[] = int[size];
+    tmp[0]=arr[0];
+    tmp[1]=arr[1];
+    for(travest the arr:i=2 to size-1)
+    max_so_far = _getMax(tmp, 0,i-2)
+    tmp[i]= (max_so_far+arr[i],tmp[i-1])
+
+    return tmp[size-1];
+
+
+ O(n) solution
+int _findMaxSum(int arr[], int size)
+    incl= arr[0];
+    excl = 0;
+    excl_new;
+    for(int i=1;i<size;i++)
+         excl_new = Max(incl,excl)          
+         incl = excl + arr[i];
+         excl = excl_new;
+
+    return Max(incl,excl);
+
+//Product Array Puzzle without division operator and in O(n).
+ 
+  int[] _productArray(int arr[], int n)
+         left[0] =1;
+       for(int i=1;i<n;i++)
+          left[i]= left[i-1]*arr[i-1]; 
+         right[n-1] =1;
+       for(int i=n-2;i>=0;i--)
+          right[i]= right[i+1]*arr[i+1]
+       for(int i=0;i<n;i++)
+          product[i] = left[i] * right[i];  
+       return product;
+
+// Union and Intersection of two sorted arrays
+ void _printUnion(int arr1[],int arr2[],int m , int n)
+       if(m>=arr1.length)
+          _printAll(arr2,n)
+          return;
+        if(n>=arr2.length)
+          _printAll(arr1,m)
+          return;
+       if(arr1[m] == arr2[n])
+          _print(arr2[n])
+           m++,n++;
+       if(arr1[m] > arr2[n])
+          _print(arr2[n]);
+           n++;
+       else
+          _print(arr1[m]);
+           m++;
+        _printUnion( arr1, arr2, m , n)
+
+  void _printAll(int arr[],int n)
+       for(int i = n ;i<arr.length;i++)
+         _print(arr[i]);
+
+  void _printIntersetion(int arr1[],int arr2[],int m , int n)
+       
+       if(m>=arr1.length || n>=arr2.length) 
+          return;
+       if(arr1[m] == arr2[n])
+          _print(arr2[n])
+           m++,n++;
+       if(arr1[m] > arr2[n])
+           n++; 
+       else 
+           m++;
+
+/*Given an array arr[] of integers, find out the difference between any two elements such that larger element appears after the smaller number in arr[]*/
+int _maxDiff(int arr[])
+    max = arr[0], min = arr[0],diff;
+    for(int i=1;i<arr.length;i++)
+        if(arr[i] > max)
+            max = arr[i];
+            diff = max-min;
+         if(arr[i] < min)
+            min = arr[i];
+     return diff;
+     
+/**/
+int _printMaxSubSquare(bool M[R][C])
+     copy(S[R][C],M[R][C]);
+     for(int i =1;i<R;i++)
+         for(int j = 1 ;j<C ; j++)
+              if(M[i][j]==1)
+                 S[i][j] = Min(M[i-1][j],M[i-1][j-1],M[i][j-1])+1
+              else 
+                 S[i][j]=0;
+     return maxOf(S);
+
+/*Maximum and minimum of an array using minimum number of comparisons
+ (Tournament Method)*/
+Pair _MaxMin(int arr[],int low, int high)
+     if(low==high)
+        pair.min = arr[low]
+        pair.max = arr[high]
+        set max and min both in pair as arr[low]
+        return pair;
+     elseif(high = low + 1)
+       set max and min in pair
+       return pair;     
+        
+     else
+        mid = low+(high-low)/2;
+        Pair mml = MaxMin(arr,low,mid);
+        Pair mmr = MaxMin(arr,mid+1,high);
+        return _getTrueMaxMin(pair,mml,mmr);
+     
+ Pair _getTrueMaxMin(pair,mml,mmr)
+       pair.max = Max(mml.max,mmr.max);
+       pair.min = Min(mml.min,mmr.min);
+       return pair;
+
+// Sort elements by frequency
+void _printElmSortedByFreq(int arr[])
+      
+      //get frequency of all the elements present-- m1 matrix
+      // get the first index of all the element presetn--- m2 matrix
+      //sort m1 on the basis of frequency.
+      // break the tie if any on the basis of matrix m2
+     
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+       

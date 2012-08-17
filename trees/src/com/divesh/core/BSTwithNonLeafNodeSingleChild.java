@@ -4,8 +4,8 @@ import java.util.Stack;
 
 public class BSTwithNonLeafNodeSingleChild {
 	private Stack<Integer> stack = new Stack<Integer>();
-	private int tmp;
-	public  boolean isNonLeafNodeSingleChile(int[] preOrderBST)
+	/**Not working, attempted first time*/
+	public  boolean isNonLeafNodeSingleChile2(int[] preOrderBST)
 	{
 		if(preOrderBST.length==1)
 		{
@@ -49,12 +49,42 @@ public class BSTwithNonLeafNodeSingleChild {
 		System.out.println("Nodes :"+stack);
 		return stack.size()>0?false:true;
 	}
+	/** working, attempted secound time*/
+	public  boolean isNonLeafNodeSingleChile(int[] preOrderBST)
+	{
+		int size = preOrderBST.length;
+		int min = preOrderBST[size - 1], max = preOrderBST[size - 1];
+		for(int i =size-2;i>=0;i--)
+		{
+			if (preOrderBST[i] > preOrderBST[i + 1]) {
+				if (!(preOrderBST[i] > max))
+					return false;
+				max = preOrderBST[i];
+			} else {
+				if (!(preOrderBST[i] < min))
+					return false;
+				min = preOrderBST[i];
+			}
+		}
+		return true;
+	}
+	/** working, attempted third time*/
+	public boolean isNonLeafNodeSingleChile1(int[] preOrderBST) {
+		int size = preOrderBST.length;
+		for (int i = 0; i < size - 1; i++) {
+			int x = preOrderBST[i] - preOrderBST[i + 1];
+			int y = preOrderBST[i] - preOrderBST[size - 1];
+			if ((x * y) < 0)
+				return false;
+		}
+		return true;
+	}
 	
 	public static void main(String args[])
 	{
 		BSTwithNonLeafNodeSingleChild BSTsingleChild = new BSTwithNonLeafNodeSingleChild();
-		//int a[]={4,3,1,2,5};
+		//int a[]={20,10,11,13,12};
 		int a[]={6,4,2,5,10,9};
-		System.out.println(BSTsingleChild.isNonLeafNodeSingleChile(a));
+		System.out.println(BSTsingleChild.isNonLeafNodeSingleChile1(a));
 	}
 }
