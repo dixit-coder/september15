@@ -3,11 +3,13 @@ package com.divesh.core;
 import com.divesh.util.Vertex;
 
 public class Graph {
-	private final int MAX_VERTS = 20;
+	public final int MAX_VERTS = 20;
 
-	private Vertex vertexList[]; // array of vertices
-	private int adjMat[][]; // adjacency matrix
-	private int nVerts; // current number of vertices
+	public Vertex vertexList[]; // array of vertices
+	public int adjMat[][]; // adjacency matrix
+	public int nVerts; // current number of vertices
+
+
 
 	public Graph() {
 		super();
@@ -32,5 +34,23 @@ public class Graph {
 
 	public void addEdge(int start, int end, int value) {
 		adjMat[start][end] = value;
+	}
+
+	public int getAdjUnvisitedVertex(int v) {
+
+		for (int j = 0; j < nVerts; j++) {
+			if (adjMat[v][j] == 1 && (vertexList[j]).wasVisited == false) {
+				return j;
+			}
+		}
+		return -1;
+	}
+	public void displayVertex(int v) {
+		System.out.print(vertexList[v].label);
+	}
+	public void resetAllVisitedFlags()
+	{
+		for(int j=0; j<nVerts; j++)
+			vertexList[j].wasVisited = false;
 	}
 }

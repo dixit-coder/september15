@@ -1,8 +1,25 @@
-class Vertex
-{ public char label;
-  public boolean wasVisited;
-  public vertex(char lab)
-  { label = lab;
-     wasVisited = false;
-  }
-}
+
+ Vertex 
+    char lable
+    boolean wasVisisted
+ Graph
+    int MAX_VERTEX
+    int nVertx=0;
+    Vertex vertexList[MAX_VERTEX];
+    adjMat[MAX_VERTEX][MAX_VERTEX];
+    // intialize all 0 in adjMat[][],
+    
+     _addVertex(char label)
+      vertexList[nVertx++]=new Vertex(label);
+     
+     _addEdge(int start,int end)
+        adjMat[start][end] = 1;
+
+     int  _getAdjUnvisitedVertex(int v)
+     
+        for(int j = 0;j<nVertx;j++)
+           if(adjMat[v][j]==1 && vertxList[j].wasVisited)
+               return j;
+        return -1; 
+     
+    
