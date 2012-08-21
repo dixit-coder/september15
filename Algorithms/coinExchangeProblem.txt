@@ -1,0 +1,8 @@
+set Min[i] equal to infinity for all i
+Min[0]=0
+for i=1 to S
+  for j=0 to N-1
+         if(Vj <=i and Min[i-vj]+1<Min[i])
+            Min[i]=Min[i-vj]+1
+
+Output Min[S]

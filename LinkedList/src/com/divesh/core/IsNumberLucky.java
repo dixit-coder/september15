@@ -80,7 +80,23 @@ public class IsNumberLucky {
 
 	public static void main(String args[]) {
 		IsNumberLucky numberLucky = new IsNumberLucky();
-		System.out.println(numberLucky.isLucky(Integer.parseInt(args[0])));
+		//System.out.println(numberLucky.isLucky(Integer.parseInt(args[0])));
+		for(int i=1;i<200;i++)
+		{
+			if(numberLucky._isLucky(i))
+				System.out.print(" "+i);
+		}
+	}
+	
+	public boolean _isLucky(int x) {
+		int count = 2, pos = x;
+		while (count <=pos) {
+			if (pos % count == 0)
+				return false;
+			pos = pos - pos / count;
+			count++;
+		}
+		return true;
 	}
 }
 
