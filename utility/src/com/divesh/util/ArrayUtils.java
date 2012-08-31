@@ -1,5 +1,8 @@
 package com.divesh.util;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class ArrayUtils {
 	public static void swap(Object a, Object b, int end) {
 		Object tmp = a;
@@ -88,7 +91,7 @@ public class ArrayUtils {
 	}
 
 	/**
-	 *  rotate the sorted array at some pivot unknown to you beforehand. So for
+	 * rotate the sorted array at some pivot unknown to you beforehand. So for
 	 * instance, 1 2 3 4 5 might become 3 4 5 1 2
 	 */
 	public static int getPivotIndexInsortedRowtedArray(int arr[], int low,
@@ -106,5 +109,34 @@ public class ArrayUtils {
 		}
 
 	}
-
+	/**
+	 * Generate a random numbers from range 0..99
+	 * */
+    public static int[] getRandomeNumberArray(int x)
+    {
+    	int arr[] = new int[x];
+    	Random randomGenerator= new Random();
+    	for(int i=0;i<x;i++)
+    	{
+    		arr[i]= randomGenerator.nextInt(100);
+    	}
+    	Arrays.sort(arr);
+    	return arr;
+    }
+    
+    public static void main(String args[])
+    {
+    	for(int num :getRandomeNumberArray(10))
+    	{
+    		System.out.print(num+",");
+    	}
+    	System.out.println();
+    	int arr[]= {26,43,49,74,77,79,85,93,93,95,12,23,32,45,53,62,65,66,88,96};
+    	Arrays.sort(arr);
+    	for(int num :arr)
+    	{
+    		System.out.print(num+",");
+    	}
+    }
+    
 }
