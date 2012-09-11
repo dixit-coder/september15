@@ -10,7 +10,7 @@ public class TreeFormation {
 		root.lchild = new Tnode(2);
 		root.rchild = new Tnode(3);
 		root.lchild.lchild = new Tnode(4);
-		root.lchild.rchild = new Tnode(5);
+		root.rchild.rchild = new Tnode(5);
 
 		return root;
 	}

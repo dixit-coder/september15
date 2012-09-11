@@ -84,7 +84,8 @@ public class BSTwithNonLeafNodeSingleChild {
 	{
 		BSTwithNonLeafNodeSingleChild BSTsingleChild = new BSTwithNonLeafNodeSingleChild();
 		//int a[]={20,10,11,13,12};
-		int a[]={6,4,2,5,10,9};
+		//int a[]={6,4,2,5,10,9};
+		int a[]={8,7,9};
 		System.out.println(BSTsingleChild.isNonLeafNodeSingleChile1(a));
 	}
 }

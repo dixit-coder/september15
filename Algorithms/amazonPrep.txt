@@ -1,0 +1,195 @@
+================================================
+
+
+static Node getInorderSuccessor(Node root) {
+
+   getInSucc(root);
+   return node;
+}
+
+
+static void getInSucc(Node root)
+{  tmp = root;
+    if(node==null)
+      return;
+    else
+      tmp = tmp.right;
+      while(tmp!=null && tmp.left!=null)
+             tmp = tmp.left;
+      root.next = tmp;
+    getInSucc(root.left);
+    getInSucc(root.right);
+}
+
+=================================================
+
+ Node _cloneLinkedList(Node head) 
+        curr = head; 
+       while(curr!=null)
+          tmp = curr;
+          curr = curr.next;
+ 	  copyNode=new Node(tmp.val);
+	  tmp.next = copyNode;
+          copyNode.random = tmp;
+
+        curr = copyNodeHead;
+ 
+        while(curr!=null)
+          tmp = curr.random;
+          curr.random= curr.random.ramdom.nxt;
+          tmp.next = curr.next.random;
+          curr= curr.nxt;
+
+       return CopyNodeHead;
+==================================================
+
+void _printKDistanceNodes(node root, node start, int K)
+     _printAllDownwordNode(start,k);
+    
+     Stack<node> stack = _inorderTraversalRootToNodePath(root,start);
+      stack.pop() // removing the peek element start form the stack
+      while(stack.size()!=0)
+          start = stack.pop();
+          K--;
+          printAllDownwardNodeKdistance(start,K);
+          
+          
+
+
+_printAllDownwardNodeKdistance(node start,int k)
+    if(k==0)
+      print start.data;
+    _printAllDownwardNodeKdistance(start.left,k-1);
+    _printAllDownwardNodeKdistance(start.right,k-1);
+
+int _getDistBwNodes(Node root,Node start)
+     if(root == start)
+       return 0;
+     return max{_getDistBwNodes(root.left,start),_getDistBwNodes(root.right,start)} + 1;
+
+ Stack<Node> stack = new Stack<Node>();
+ 
+Stack<Node> _inorderTraversalRootToNodePath(Node root,Node node)
+     if(root == null)
+       return null;
+     // process the node  then left child and then right child
+     stack.push(root);
+     if(root == node)
+       return stack;
+     if(root.left == root.right == null)
+         stack.pop();
+         return;
+     _inorderTraversal(root.left,node);
+     _inorderTraversal(root.right,node);
+     stack.pop();
+
+==========================================================
+
+boolean _isExpressionValid(Char arr[])
+         int prod =1; min = 5;
+	for(Char x: arr)
+                if(x=='[')
+                      if(5<=min)
+                           prod*=5;
+                           if(min < 5)
+                              min =5;
+		if(x=='{')
+			if(3<=min)
+                           prod*=3;
+                           if(min < 3)
+                              min =3;
+		if(x=='(')
+			if(2<=min)
+                           prod*=2;
+			   if(min < 2)
+                              min =2;
+		if(x==')')
+                      prod/=2;
+                      min=_getMin(prod);
+		if(x=='}')
+		      prod/=3;
+		      min=_getMin(prod);
+		if(x==']')
+		      prod/=5;
+		      min=_getMin(prod);
+
+int _getMin(int prod)
+    if(prod%2==0)
+       return 2;
+    elseif(prod%3==0)
+       return 3;
+    elseif(prod%5==0)
+       return 5;
+    else
+       return 5;
+
+===================================================================
+
+  _getSepratedVovelAndConsonants(Node Head)
+     Node curr=Head,vol=null,volLast=null,cons=null,consLast=null;
+     Set<Character> set = new Set<Character>();
+     set.add(a,e,i,o,u,A,E,I,O,U);
+     while(curr != null)
+       Node tmp = curr;
+       curr = curr.nxt;
+       if(set.contains(tmp.data))
+	   if(vol==null)
+              vol = volLast = tmp;
+               tmp.next=null;
+           else 
+              volLast.next = tmp;
+              tmp.next=null;
+              volLast = tmp;       
+       else
+          if(cons==null)
+              cons = consLast = tmp;
+               tmp.next=null;
+           else 
+              consLast.next = tmp;
+              tmp.next=null;
+              consLast = tmp;  
+       
+       if(volLast!=null) 
+       volLast.next = cons;
+       return vol;
+       else 
+        return cons;
+
+====================================================================
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+_reverseLinkedListK(Node HEAD, int k)
+   pev = null;
+   curr = HEAD;
+   node=curr;
+   while (curr != null) {
+			node = current;
+			count = k;
+			while (current != null && count > 0) {
+				current = current.nxt;
+				count--;
+			}
+    pcurr=curr;
+    tmp = reverseLinkedList(node, pcurr, curr);
+    if(pev==null)
+       HEAD = tmp;
+    else 
+      pev.nxt= tmp;
+
+    count = k;
+    while (current != null && count > 0) 	
+	pev = current;
+	current = current.nxt;
+	count--;
+ 	
+
+
+
+    
+ 
+
+          
+	  
+       
+ 

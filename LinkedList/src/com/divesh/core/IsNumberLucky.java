@@ -1,5 +1,7 @@
 package com.divesh.core;
 
+import com.divesh.util.Node;
+
 public class IsNumberLucky {
 	Node current;
 
@@ -100,17 +102,3 @@ public class IsNumberLucky {
 	}
 }
 
-class Node {
-	public int data;
-	public Node nxt;
-
-	public Node(int data) {
-		this.data = data;
-		this.nxt = null;
-	}
-
-	public void getNodedata(Node node) {
-		System.out.println("data==>" + data);
-	}
-
-}

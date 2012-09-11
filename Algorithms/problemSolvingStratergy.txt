@@ -1,0 +1,7 @@
+1. Try to solve the problem on your own.
+2. Write the code for the algorithm on paper.
+3. Test you code! by hand that is,no cheating with computer.
+4. Type ur code into computer exactly as is
+   Rerun the testCase u tried and some new ones.
+5. Start a list of all the mistakes you made,
+   and analyze what type of mistakes you make the most often.

@@ -101,6 +101,7 @@
        for(int i=(A.length-2)/2; i>=0;i--)
            _maxHeapify(A,i)
 
-
+  **mistakes u made***
+    A.length = A.length - 1; u forget to do.. :(
 
 

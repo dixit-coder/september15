@@ -1,0 +1,49 @@
+sorts chunks that each fit in RAM
+then merges the sorted chunks together
+
+------------------------------------------------------------------------------------------------------
+
+// algo 1: find the top 100 numbers in given unsorted 10 million numbers.               
+           
+            make a min_heap(MH) of first 100 number
+                 for each(X : element from 101 to 10 million)
+                         if( X <= MH.root)
+                            discard X;
+                         else 
+                            swap(MH.root with X)
+                            MinHeapify(MH);
+
+                 at the end
+                 print min_heap(MH), which will have top 100 elements.
+
+// Main Questions Algo:
+   while(processing of entire given text in 100 million files in managible chucks NOT done)
+       
+       Map<Bigram, count> map = new TreeMap<Bigram, count>;
+
+       for (Bigram  X : get every consicutive Bigram from the  text in main Memory)
+             if(X is present in map)
+                  // increse its count
+             else 
+              add new entry in map with count = 1;
+       
+        _write(map);
+   
+    while(processing of entire {key,value} pairs in all *_bigram.txt NOT done)
+         
+          User external merge sort and to combine all the bigrams in *_bigram.txt and obtained single file combined_bigram.txt
+           and in combined_bigram.txt if  consicutive keys are same then 
+             replace all similar keys with one key and count will sumation of these similar keys.
+
+   // user Algo 1 in combined_bigram.txt to obtain top 1 million bigrams with maximum frequency.
+          
+             
+                         
+
+
+
+_Write(Map<Bigram, count> map)
+  //Take a new file named *_bigram.txt and simple dump the map in it.
+  for(Map.Entry entry : map.entrySet())
+        printfInNewFile(entry.key, entry .count )
+  Store this file in HardDisk;
