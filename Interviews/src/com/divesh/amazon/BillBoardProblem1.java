@@ -1,40 +1,6 @@
 package com.divesh.amazon;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-public class Solution {
-	public static void main(String args[]) {
-		try {
-			BufferedReader br = new BufferedReader(new InputStreamReader(
-					System.in));
-			String s = br.readLine();
-
-			String[] NK = s.split(" ");
-			int N =  Integer.parseInt(NK[0]);
-			int k = Integer.parseInt(NK[1]);
-			int arr[] = new int[N];
-
-			
-			for (int i = 0; i < N; i++) {
-				String str = br.readLine();
-				arr[i] = Integer.parseInt(str);
-			}
-			
-			// All logic in the BillBoard class
-			int profit[];
-			BillBoardProblem problem = new BillBoardProblem();
-			profit = problem.preProcessArray(arr, k);
-			problem.getMxIndexAndUpdateAnswer(profit, 0, profit.length - 1, k);
-			
-			System.out.println(problem.getAnswer());
-		} catch (Exception e) {
-			System.err.println("Error:" + e.getMessage());
-		}
-	}
-
-}
- class BillBoardProblem {
+public class BillBoardProblem1 {
 
 	public int[] preProcessArray(int arr[], int k) {
 		int len = arr.length, sum = 0;
@@ -76,5 +42,14 @@ public class Solution {
 		getMxIndexAndUpdateAnswer(profit, left, max_index - k - 1, k);
 		getMxIndexAndUpdateAnswer(profit, max_index + 2, right, k);
 	}
-}
 
+	public static void main(String args[]) {
+		BillBoardProblem1 problem = new BillBoardProblem1();
+		int arr[] =  { 1, 2, 3, 1, 6, 10 }; //{ 6, 8, 9, 10, 11, 1, 3, 9, 4 };
+		int profit[];
+		int k = 2;
+		profit = problem.preProcessArray(arr, k);
+		problem.getMxIndexAndUpdateAnswer(profit, 0, profit.length - 1, k);
+		System.out.println(problem.getAnswer());
+	}
+}

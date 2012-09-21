@@ -43,6 +43,7 @@ public class ArrayUtils {
 		for (int x : a) {
 			System.out.print(" " + x);
 		}
+		System.out.println();
 	}
 
 	// get the Maximum element of the array.
