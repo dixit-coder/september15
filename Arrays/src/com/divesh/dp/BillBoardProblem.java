@@ -36,10 +36,10 @@ public class BillBoardProblem {
 	{
 		/*int arr[]={1,2,3,1,6,10};
 		int k = 5;
-		int arr[] = new int[10000];
-		for(int i=0;i<10000;i++)
+		int arr[] = new int[100000];
+		for(int i=0;i<100000;i++)
 		{
-			arr[i]=i+1;
+			arr[i]=2000000000;
 		}
 		int k = 100000;// 6;
 		BillBoardProblem billBoardProblem = new BillBoardProblem();
