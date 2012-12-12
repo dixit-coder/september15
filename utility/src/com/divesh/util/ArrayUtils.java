@@ -45,6 +45,17 @@ public class ArrayUtils {
 		}
 		System.out.println();
 	}
+	
+	public static void print2DArray(int[][] arr)
+	{   System.out.println("---------------------------------------------------");
+		for (int x[]: arr)
+		{
+			for(int y:x)
+				System.out.print(y+"");
+			System.out.println();
+		}
+		System.out.println("---------------------------------------------------");
+	}
 
 	// get the Maximum element of the array.
 	public static int getMaxElement(int a[]) {
