@@ -55,35 +55,31 @@ public class CircularQueue {
     	   size++; // finally increasing the size of the queue
        }
 	}
+	
 	public synchronized Object dequeue() {
-       if(isEmpty())
-       {
-    	   System.out.println("Queue is empty");
-    	   return null;
-       }
-       else{
-    	   Object element = arr[head];
-    	   if(head != MAXSIZE-1)
-    		   head++;
-    	   else 
-    		   head--;
-    	   // check if queue become empty if yes than set head n tail to -1
-    	   if(isEmpty()){
-    		   head = tail = -1;
-    	   }
-    	   size--; // finally decreasing the size of the queue 
-    	   return element;
-       }
+		if (isEmpty()) {
+			System.out.println("Queue is empty");
+			return null;
+		} else {
+			Object element = arr[head];
+			if (head != MAXSIZE - 1)
+				head++;
+			else
+				head--;
+			// check if queue become empty if yes than set head n tail to -1
+			if (isEmpty()) {
+				head = tail = -1;
+			}
+			size--; // finally decreasing the size of the queue
+			return element;
+		}
 	}
+	
     /**helper function to test the above class
      * @throws InterruptedException */
-	public static void main(String args[]) throws InterruptedException
-	{
+	public static void main(String args[]) throws InterruptedException {
 		CircularQueue queue = new CircularQueue();
-		queue.initialize(5);
-		
-//		for(int i = 0; i <4;i++)
-//			queue.enqueue(i);
+		queue.initialize(5); // setting the size of queue to 5
 		Thread t1 = new Thread(new Producer(queue));
 		Thread t2 = new Thread(new Consumer(queue));
 		t1.setName("producer");
@@ -96,45 +92,44 @@ public class CircularQueue {
 	}
 }
 
-class Producer implements Runnable{
-	/**helper Class  to test queue class in multiThread enviroment*/
+class Producer implements Runnable {
+	/** helper Class to test queue class in multiThread enviroment */
 	CircularQueue queue;
+
 	public Producer(CircularQueue queue) {
-	this.queue = queue;
+		this.queue = queue;
 	}
 
 	@Override
 	public void run() {
-		for (int i = 0; i < 5; i++) {
-			queue.enqueue(i);
-			System.out.println(Thread.currentThread().getName() +": " + queue.getSize());
-			try {
-				Thread.sleep(0);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		synchronized (queue) {
+			for (int i = 0; i < 5; i++) {
+
+				queue.enqueue(i);
+				System.out.println(Thread.currentThread().getName() + ": "
+						+ queue.getSize());
 			}
+
 		}
 	}
-	
+
 }
-class Consumer implements Runnable{
-	/**helper Class  to test queue class in multiThread enviroment*/
+
+class Consumer implements Runnable {
+	/** helper Class to test queue class in multiThread enviroment */
 	CircularQueue queue;
+
 	public Consumer(CircularQueue queue) {
-	this.queue = queue;
+		this.queue = queue;
 	}
 
 	@Override
 	public void run() {
-		for (int i = 0; i < 5; i++) {
-			queue.dequeue();
-			System.out.println(Thread.currentThread().getName() +": "+ queue.getSize());
-			try {
-				Thread.sleep(0);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		synchronized (queue) {
+			for (int i = 0; i < 5; i++) {
+				queue.dequeue();
+				System.out.println(Thread.currentThread().getName() + ": "
+						+ queue.getSize());
 			}
 		}
 	}
